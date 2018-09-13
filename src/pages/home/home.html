@@ -1,14 +1,27 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="primary">
+    <ion-title color="white">
+      IMC
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Peso</ion-label>
+      <ion-input placeholder="Em quilos" required type="number" [(ngModel)]="peso"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Altura</ion-label>
+      <ion-input placeholder="Em metros" [(ngModel)]="altura" required type="number"></ion-input>
+    </ion-item>
+    <ion-item></ion-item>
+  </ion-list>
+
+  <button ion-button (click)="calcularImc();" type="submit" class="submit-btn">Calcular</button>
+  <button ion-button color="danger"(click)="limparCampos();">Limpar</button>
+
 </ion-content>
